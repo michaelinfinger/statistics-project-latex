@@ -1,6 +1,17 @@
 \documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc} % Sanitization
 \usepackage{graphicx} % Required for inserting images
-
+\usepackage{float} % Semi-required for inserting figures
+\usepackage{pgfplots} % Obviously, a plotting tool
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{dateplot} % Required for "Start time" 
+\usepackage{tikz} % And an extension of said plotting tool
+\usepackage{csvsimple-l3} % For \csvcol
+\usepackage{longtable} % For the long tables
+\usepackage{pdflscape} % For landscape pages
+\usepackage{arydshln} % Last.
+\usepackage{datatool}
+\pgfplotsset{compat=1.18}
 \title{Statistics Summative Project}
 \author{Michael Infinger}
 \date{May 2026}
@@ -38,7 +49,99 @@ Some general hypotheses we have about this data are:
     \item MIC will have a higher rate of college attendance.
     \item There will be a significant difference in variability between the two academic environments.
 \end{itemize}
-
 To test these hypotheses, we must perform tests in order to determine their significance, such as two-sample significance tests for means, $\chi^2$ significance tests, and we will analyze the p-values at $\alpha=0.05$ to determine significance.
+\section{Collection methods}
+To collect our data, we will use surveys among the student bodies of SWHS and MIC. To achieve this, we will distribute QR codes leading to the survey among the campus; of those, we have around 120. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Picture1.png}
+    \caption{The QR code used for the survey.}
+    \label{fig:placeholder}
+\end{figure}
+
+\noindent We then contact teachers and administrators in order to further spread our survey among the student population of both SWHS and MIC.
+
+\subsection{Collection statistics}
+
+In total, the survey obtained X responses out of the possible 1247 students in the population. This is a proportion of $\hat{p}=0.X$ for SWHS and $\hat{p}=0.X$ for MIC, a ------ number. \\
+
+I put people up to the task of handing out QR codes at MIC, and put my full trust in them. The school was in its busy season, so many didn't respond or were too busy to respond. \\
+
+\newpage
+
+One small quirk about this collection method is that we get to know when the responses are submitted. This gives us an extra data point as well as enabling us to make graphs such as these: \\
+
+\begin{tikzpicture}
+\begin{axis}[
+    date coordinates in=x,
+    xticklabel=\month/\day\ \hour:\minute,
+    xticklabel style={
+        rotate=45,
+        anchor=east
+    },
+    xlabel={Date and Time},
+    ylabel={Total Responses},
+    width=\textwidth,
+    height=8cm,
+    grid=major,
+]
+
+\addplot [only marks] table[
+    col sep=comma,
+    x=datetimeiso,
+    y=total,
+] {totals.csv};
+
+\end{axis}
+\end{tikzpicture}
+
+This graph represents the the total responses in relation to time.
+
+\section{Appendix: Survey Results}
+
+\begin{longtable}{p{0.25\textwidth} : p{0.6\textwidth}}
+    \csvreader[
+        no head,
+        column count=28,
+        respect all,
+        respect dollar,
+        respect underscore,
+        late after line=\\\hdashline, 
+        late after first line=\\\hdashline,
+        late after last line=\\\hline
+    ]{data.csv}{%
+        2=\startTime, 3=\compTime, 7=\qOne, 8=\qTwo, 9=\qThree, 
+        10=\qFour, 11=\qFive, 12=\qSix, 13=\qSeven, 14=\qEight, 
+        15=\qNine, 16=\qTen, 17=\qEleven, 18=\qTwelve, 19=\qThirteen, 
+        20=\qFourteen, 21=\qFifteen, 22=\qSixteen, 23=\qSeventeen, 
+        24=\qEighteen, 25=\qNineteen, 26=\qTwenty, 27=\qTwentyone, 28=\qTwentytwo
+    }{%
+        Start time      & \startTime \\ \hdashline
+        Completion time & \compTime \\ \hdashline
+        Question I      & \qOne \\ \hdashline
+        Question II     & \qTwo \\ \hdashline
+        Question III    & \qThree \\ \hdashline
+        Question IV     & \qFour \\ \hdashline
+        Question V      & \qFive \\ \hdashline
+        Question VI     & \qSix \\ \hdashline
+        Question VII    & \qSeven \\ \hdashline
+        Question VIII   & \qEight \\ \hdashline
+        Question IX     & \qNine \\ \hdashline
+        Question X      & \qTen \\ \hdashline
+        Question XI     & \qEleven \\ \hdashline
+        Question XII    & \qTwelve \\ \hdashline
+        Question XIII   & \qThirteen \\ \hdashline
+        Question XIV    & \qFourteen \\ \hdashline
+        Question XV     & \qFifteen \\ \hdashline
+        Question XVI    & \qSixteen \\ \hdashline
+        Question XVII   & \qSeventeen \\ \hdashline
+        Question XVIII  & \qEighteen \\ \hdashline
+        Question XIX    & \qNineteen \\ \hdashline
+        Question XX     & \qTwenty \\ \hdashline
+        Question XXI    & \qTwentyone \\ \hdashline
+        Question XXII   & \qTwentytwo
+    }
+\end{longtable}
 
 \end{document}
