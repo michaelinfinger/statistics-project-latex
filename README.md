@@ -23,12 +23,18 @@ Right now, the survey begins with some general questions about the person taking
 2. What school are you attending right now?
    - SWHS
    - MIC
-4. What is your grade level?
+3. How is it?
+   - Very good
+   - Good
+   - Fair
+   - Poor
+   - Garbage
+5. What is your grade level?
    - 09
    - 10
    - 11
    - 12
-5. What sports do you play? (multiple answers)
+6. What sports do you play? (multiple answers)
    - No
    - Football
    - Soccer
@@ -39,16 +45,16 @@ Right now, the survey begins with some general questions about the person taking
    - Baseball
    - Tennis
    - Cricket
-6. What college do you want to attend?
-7. What is your favorite teacher?
-8. What is your favorite food?
-9. What is your favorite ice cream flavor?
-10. What is your favorite musical artist?
-11. What is your favorite visual artist?
-12. Do you eat school lunch or do you bring your own lunch?
+7. What college do you want to attend?
+8. What is your favorite teacher?
+9. What is your favorite food?
+10. What is your favorite ice cream flavor?
+11. What is your favorite musical artist?
+12. What is your favorite visual artist?
+13. Do you eat school lunch or do you bring your own lunch?
     - School lunch
     - Own lunch
-13. Rank the subjects by your personal opinion and enjoyment of them. (Ranking)
+14. Rank the subjects by your personal opinion and enjoyment of them. (Ranking)
     - Math
     - English
     - Science
@@ -56,7 +62,7 @@ Right now, the survey begins with some general questions about the person taking
     - Foreign Language
     - Music
     - Art
-14. What is your weighted GPA?
+15. What is your weighted GPA?
     - 0-0.5
     - 0.5-1
     - 1-1.5
@@ -68,31 +74,31 @@ Right now, the survey begins with some general questions about the person taking
     - 4-4.5
     - 4.5-5
     - Prefer not to answer
-15. What is your main hobby?
-16. How many friends do you have?
-17. A teacher leaves the answer key on their desk and walks out. What do you do?
+16. What is your main hobby?
+17. How many friends do you have?
+18. A teacher leaves the answer key on their desk and walks out. What do you do?
     - Snatch it
     - Look at it
     - Don't look at it
     - Rip it up
     - Warn the teacher about the answer key
-18. Your best friend is breaking a minor school rule (like wearing a hat). An admin asks you if they were. What do you do?
+19. Your best friend is breaking a minor school rule (like wearing a hat). An admin asks you if they were. What do you do?
     - Tell the truth
     - Lie
     - Falsely accuse your friend of something worse
-19. Everyone in the world has to take a private vote by pressing a red or blue button. If more than 50% of people press the BLUE button, everyone survives. If less than 50% of people press the BLUE button, only people who pressed the RED button survive. Either way, pressing the RED button guarantees your own survival. What do you press?
+20. Everyone in the world has to take a private vote by pressing a red or blue button. If more than 50% of people press the BLUE button, everyone survives. If less than 50% of people press the BLUE button, only people who pressed the RED button survive. Either way, pressing the RED button guarantees your own survival. What do you press?
     - Red
     - Blue
-20. When does a ring become a tube?
+21. When does a ring become a tube?
     - When the height is half the width or more
     - When the height is the width or more
     - When the height is double the width or more
-21. Oh no! Your printer has malfunctioned on the due date of your project! What do you do?
+22. Oh no! Your printer has malfunctioned on the due date of your project! What do you do?
     - Unleash fury on the printer
     - Go to a copy shop
     - Ask a friend (in this hypothetical, you have some)
     - Ask the teacher for an extension on the project
-22. On a table, there is a live beetle, a live lizard, a live goldfish, a live rodent, and a live earwig. A strange man is forcing you to stuff one in your pocket in the morning and return the creature alive to him by the end of the day. Your pocket has a zipper, and it can hold oxygenated water without leaking. Which one do you pick?
+23. On a table, there is a live beetle, a live lizard, a live goldfish, a live rodent, and a live earwig. A strange man is forcing you to stuff one in your pocket in the morning and return the creature alive to him by the end of the day. Your pocket has a zipper, and it can hold oxygenated water without leaking. Which one do you pick?
     - Beetle
     - Lizard
     - Goldfish
