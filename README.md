@@ -21,8 +21,8 @@ Right now, the survey begins with some general questions about the person taking
 
 1. What is the first letter of your first name?
 2. What school are you attending right now?
-   -SWHS
-   -MIC
+   - SWHS
+   - MIC
 3. What is your grade level?
    - 09
    - 10
