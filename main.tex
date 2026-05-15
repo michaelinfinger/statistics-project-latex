@@ -193,19 +193,24 @@ One small quirk about Microsoft Forms is that we get to know when the responses 
 
 \begin{tikzpicture}
 \begin{axis}[
-    ybar interval,
-    xlabel=Value,
-    ylabel=Count,
+    date coordinates in=x,
+    xticklabel=\month/\day\ \hour:\minute,
+    xticklabel style={
+        rotate=45,
+        anchor=east
+    },
+    xlabel={Date and Time},
+    ylabel={Total Responses},
+    width=\textwidth,
+    height=8cm,
+    grid=major,
 ]
 
-\addplot+[
-    hist={
-        bins=10,
-        data min=0,
-        data max=5,
-    }
-]
-table [y=GPA, col sep=comma] {data.csv};
+\addplot [only marks] table[
+    col sep=comma,
+    x=datetimeiso,
+    y=total,
+] {totals.csv};
 
 \end{axis}
 \end{tikzpicture}
@@ -254,44 +259,7 @@ This graph represents the proportion of students in each school who responded to
 
 \section{Data analysis}
 
-We have large amounts of quantitative and qualitative data, as seen in the appendix. To analyze this large amount, we will use pie charts, bar charts, scatter plots, heatmaps, box-and-whisker plots, and general interesting statistics in order to present our data in a human-readable format. We will use $\chi^2$ tests for associations, as well as $t$-tests for significance. We will make confidence intervals and determine significance based on those intervals. We will also present this data in a clean, aesthetically pleasing, human-readable format.
-
-The first thing I would like to touch on is GPA. Currently, we have responses already sorted within intervals. Therefore, we use a histogram.
-The bins are precomputed, so we use the bar chart feature instead of the histogram feature.
-
-\begin{tikzpicture}
-\begin{axis}[
-    ybar,
-    bar width=20pt,
-    enlarge x limits=0,
-    xlabel={Interval},
-    ylabel={Frequency},
-    symbolic x coords={
-        0-0.5,
-        0.5-1,
-        1-1.5,
-        1.5-2,
-        2-2.5,
-        2.5-3,
-        3-3.5,
-        3.5-4,
-        4-4.5,
-        4.5-5,
-        5-5.5,
-        5.5-6,
-    },
-    xtick=data,
-    ymin=0,
-]
-\addplot table[
-    x=interval,
-    y=count,
-    col sep=comma
-] {data.csv};
-\end{axis}
-\end{tikzpicture}
-
-
+We have large amounts of quantitative and qualitative data, as seen in the appendix. To analyze this large amount, we will use pie charts, bar charts, scatter plots, heatmaps, box-and-whisker plots, and general interesting statistics in order to present our data in a human-readable format. We will use $\chi^2$ tests for associations, as well as $t$-tests for significance. We will make confidence intervals and determine significance based on those intervals. We will also present this data in a clean, aesthetically pleasing, human-readable format. To start:
 
 \section{Appendix: Survey Results}
 
