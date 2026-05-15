@@ -12,6 +12,7 @@
 \usepackage{arydshln} % Last.
 \usepackage{datatool}
 \pgfplotsset{compat=1.18}
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
 \title{Statistics Summative Project}
 \author{Michael Infinger}
 \date{May 2026}
@@ -50,8 +51,128 @@ Some general hypotheses we have about this data are:
     \item There will be a significant difference in variability between the two academic environments.
 \end{itemize}
 To test these hypotheses, we must perform tests in order to determine their significance, such as two-sample significance tests for means, $\chi^2$ significance tests, and we will analyze the p-values at $\alpha=0.05$ to determine significance.
-\section{Collection methods}
-To collect our data, we will use surveys among the student bodies of SWHS and MIC. To achieve this, we will distribute QR codes leading to the survey among the campus; of those, we have around 120. \\
+
+\section{Survey contents}
+The survey is split into two sections: basic information, and hypotheticals. The first section collects basic data about the user, such as their favorite food. The second section asks the user hypothetical dilemmas in order to gauge their philosophical or ethical outlooks.
+\subsection{Survey}
+\begin{enumerate}
+    \item What is the first letter of your first name?
+    \item What school are you attending right now?
+    \begin{itemize}
+        \item SWHS
+        \item MIC
+    \end{itemize}
+    \item How is it?
+    \begin{itemize}
+        \item Very good
+        \item Good
+        \item Fair
+        \item Poor
+        \item Garbage
+    \end{itemize}
+    \item What is your grade level?
+    \begin{itemize}
+        \item 09
+        \item 10
+        \item 11
+        \item 12
+    \end{itemize}
+    \item Play any sports? (Multiple answers)
+    \begin{itemize}
+        \item No
+        \item Football
+        \item Soccer
+        \item Hockey
+        \item Badminton
+        \item Basketball
+        \item Lacrosse
+        \item Baseball
+        \item Tennis
+        \item Cricket
+    \end{itemize}
+    \item What college do you want to attend?
+    \item Your favorite teacher?
+    \item What is your favorite food?
+    \item What is your favorite ice cream flavor?
+    \item What is your favorite musical artist?
+    \item What is your favorite visual artist?
+    \item Do you eat school lunch or do you bring your own lunch?
+    \begin{itemize}
+        \item School lunch
+        \item Own lunch
+    \end{itemize}
+    \item Rank the subjects by your personal opinion and enjoyment of them. (Ranking)
+    \begin{itemize}
+        \item Math
+        \item English
+        \item Science
+        \item History
+        \item Foreign Language
+        \item Music
+        \item Art
+    \end{itemize}
+    \item What is your weighted GPA? If you prefer not to answer, please enter "Prefer not to answer".
+    \begin{itemize}
+        \item 0-0.5
+        \item 0.5-1
+        \item 1-1.5
+        \item 1.5-2
+        \item 2-2.5
+        \item 2.5-3
+        \item 3-3.5
+        \item 3.5-4
+        \item 4-4.5
+        \item 4.5-5
+        \item Prefer not to answer
+    \end{itemize}
+    \item Your main hobby?
+    \item How many friends do you have?
+    \item A teacher leaves the answer key on their desk and walks out. What do you do?
+    \begin{itemize}
+        \item Snatch it
+        \item Look at it
+        \item Don't look at it
+        \item Rip it up
+        \item Warn the teacher about the answer key
+    \end{itemize}
+    \item Your best friend is breaking a minor school rule (like wearing a hat). An admin asks you if they were. What do you do?
+    \begin{itemize}
+        \item Tell the truth
+        \item Lie
+        \item Falsely accuse your friend of something worse
+    \end{itemize}
+    \item Everyone in the world has to take a private vote by pressing a red or blue button. If more than 50 percent of people press the blue button, everyone survives. If less than 50 percent of people press the blue button, only people who pressed the red button survive. Either way, pressing the red button guarantees your own survival. What do you press?
+    \begin{itemize}
+        \item Red
+        \item Blue
+    \end{itemize}
+    \item When does a ring become a tube?
+    \begin{itemize}
+        \item When the height is half the width or more
+        \item When the height is the width or more
+        \item When the height is double the width or more
+    \end{itemize}
+    \item Oh no! Your printer has malfunctioned on the due date of your project! What do you do?
+    \begin{itemize}
+        \item Unleash fury on the printer
+        \item Go to a copy shop
+        \item Ask a friend (in this hypothetical, you have some)
+        \item Ask the teacher for an extension on the project
+    \end{itemize}
+    \item On a table, there is a live beetle, a live lizard, a live goldfish, a live rodent, and a live earwig. A strange man is forcing you to stuff one in your pocket in the morning and return the creature alive to him by the end of the day. Your pocket has a zipper, and it can hold oxygenated water without leaking. Which one do you pick?
+    \begin{itemize}
+        \item Beetle
+        \item Lizard
+        \item Goldfish
+        \item Rodent
+        \item Earwig
+        \item All of them, in separate pockets, at the same time for a greater reward
+        \item Embrace uncertainty and flee
+    \end{itemize}
+\end{enumerate}
+
+\section{Methodology}
+To collect our data, we will use surveys among the student bodies of SWHS and MIC. To achieve this, we will distribute QR codes leading to the survey among the campus; of those, we have around 220. \\
 
 \begin{figure}[H]
     \centering
@@ -60,17 +181,15 @@ To collect our data, we will use surveys among the student bodies of SWHS and MI
     \label{fig:placeholder}
 \end{figure}
 
-\noindent We then contact teachers and administrators in order to further spread our survey among the student population of both SWHS and MIC.
+\noindent We then contact teachers and administrators in order to further spread our survey among the student population of both SWHS and MIC. To avoid confounding, we will restrict the population to those within the WALTON\_CSD group.
 
-\subsection{Collection statistics}
+\section{Collection statistics}
 
-In total, the survey obtained X responses out of the possible 1247 students in the population. This is a proportion of $\hat{p}=0.X$ for SWHS and $\hat{p}=0.X$ for MIC, a ------ number. \\
+In total, the survey obtained X responses out of the possible 1127 students in the population of SWHS and X responses out of the possible 117 students in the population of MIC. This is a proportion of $\hat{p}=0.X$ for SWHS and $\hat{p}=0.X$ for MIC. \\
 
-I put people up to the task of handing out QR codes at MIC, and put my full trust in them. The school was in its busy season, so many didn't respond or were too busy to respond. \\
+I recruited people to hand out QR codes at MIC, and put my complete confidence in them. The school was in its' busy season, so many didn't respond or were too busy to respond. \\
 
-\newpage
-
-One small quirk about this collection method is that we get to know when the responses are submitted. This gives us an extra data point as well as enabling us to make graphs such as these: \\
+One small quirk about Microsoft Forms is that we get to know when the responses are submitted. This gives us an extra data point as well as enabling us to make graphs such as these: \\
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -96,27 +215,72 @@ One small quirk about this collection method is that we get to know when the res
 \end{axis}
 \end{tikzpicture}
 
-This graph represents the the total responses in relation to time.
+This graph represents the the total responses in relation to time. The $x$-axis represents time, and the points are plotted based on the submission time rather than the start time (to maintain the function-like characteristics of the plot) while the $y$-axis is the total responses of the survey. Here you will see distinct clusters of responses, noticing that most responses take place within school hours; exactly when the surveys are distributed.
+
+\subsection{Response rates}
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel=School,
+        ylabel=Total responses,
+        bar width=25pt,
+        ybar,
+        ymin=0,
+        symbolic x coords={SWHS,MIC},
+        xtick=data,
+        enlarge x limits=0.5,
+    ]
+    \addplot coordinates {(SWHS,50) (MIC,4)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+This graph represents the total responses attributed to each school in our study. SWHS had a much higher total of responses due to its ease of access and heavy student population. However:
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel=School,
+        ylabel=Proportion of responding students,
+        bar width=25pt,
+        ybar,
+        ymin=0,
+        symbolic x coords={SWHS,MIC},
+        xtick=data,
+        enlarge x limits=0.5,
+    ]
+    \addplot coordinates {(SWHS,0.04562043795) (MIC,0.0296)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+This graph represents the proportion of students in each school who responded to the survey. Therefore, SWHS had a higher response volume, while MIC had a higher response rate.
+
+\section{Data analysis}
+
+We have large amounts of quantitative and qualitative data, as seen in the appendix. To analyze this large amount, we will use pie charts, bar charts, scatter plots, heatmaps, box-and-whisker plots, and general interesting statistics in order to present our data in a human-readable format. We will use $\chi^2$ tests for associations, as well as $t$-tests for significance. We will make confidence intervals and determine significance based on those intervals. We will also present this data in a clean, aesthetically pleasing, human-readable format. To start:
 
 \section{Appendix: Survey Results}
 
-\begin{longtable}{p{0.25\textwidth} : p{0.6\textwidth}}
+\begin{longtable}{|p{0.25\textwidth}|p{0.6\textwidth}|}
+\hline
     \csvreader[
         no head,
         column count=28,
         respect all,
         respect dollar,
         respect underscore,
-        late after line=\\\hdashline, 
-        late after first line=\\\hdashline,
+        late after line=\\\hline,
+        late after first line=\\\hline,
         late after last line=\\\hline
-    ]{data.csv}{%
+    ]{data.csv}{
         2=\startTime, 3=\compTime, 7=\qOne, 8=\qTwo, 9=\qThree, 
         10=\qFour, 11=\qFive, 12=\qSix, 13=\qSeven, 14=\qEight, 
         15=\qNine, 16=\qTen, 17=\qEleven, 18=\qTwelve, 19=\qThirteen, 
         20=\qFourteen, 21=\qFifteen, 22=\qSixteen, 23=\qSeventeen, 
         24=\qEighteen, 25=\qNineteen, 26=\qTwenty, 27=\qTwentyone, 28=\qTwentytwo
-    }{%
+    }{
         Start time      & \startTime \\ \hdashline
         Completion time & \compTime \\ \hdashline
         Question I      & \qOne \\ \hdashline
