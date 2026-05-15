@@ -193,24 +193,19 @@ One small quirk about Microsoft Forms is that we get to know when the responses 
 
 \begin{tikzpicture}
 \begin{axis}[
-    date coordinates in=x,
-    xticklabel=\month/\day\ \hour:\minute,
-    xticklabel style={
-        rotate=45,
-        anchor=east
-    },
-    xlabel={Date and Time},
-    ylabel={Total Responses},
-    width=\textwidth,
-    height=8cm,
-    grid=major,
+    ybar interval,
+    xlabel=Value,
+    ylabel=Count,
 ]
 
-\addplot [only marks] table[
-    col sep=comma,
-    x=datetimeiso,
-    y=total,
-] {totals.csv};
+\addplot+[
+    hist={
+        bins=10,
+        data min=0,
+        data max=5,
+    }
+]
+table [y=GPA, col sep=comma] {data.csv};
 
 \end{axis}
 \end{tikzpicture}
