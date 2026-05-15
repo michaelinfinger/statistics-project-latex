@@ -25,4 +25,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automated PDF compilation [skip ci]"
-          file_pattern: '"Statistics_Summative_Project.pdf"'
+          file_pattern: '*.pdf'
